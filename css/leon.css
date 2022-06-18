@@ -3,6 +3,7 @@
   --main-padding: 60px;
   --main-background: white;
   --main2-background: #f6f6f6;
+  --special-header:#ebeced;
   --main-p-color: #777;
   --secondary-color: #2c4755;
 }
@@ -37,6 +38,22 @@ body {
   .container {
     width: 1170px;
   }
+}
+div.special-header{
+  text-align: center;
+}
+div.special-header h1{
+  font-size:100px;
+  font-weight: 900;
+  margin:0;
+  color:var(--special-header);
+}
+div.special-header p{
+  font-size: 20px;
+  margin:0;
+  position:relative;
+  top:-30px;
+  color:var(--main-p-color)
 }
 nav {
   padding: 19px;
@@ -145,4 +162,33 @@ div.landing h1{
 div.landing p{
   line-height: 1.8;
   font-size: 19px;
+}
+div.feautures{
+background-color:var(--main2-background);
+padding:var(--main-padding) 0;
+}
+div.feautures div.container{
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+}
+div.feautures div.container div.box{
+  text-align: center;
+  padding:20px;
+  max-width: 300px;
+}
+div.feautures div.container div.box i{
+  font-size:48px;
+  font-weight: 900;
+  color:var(--main-color);
+}
+div.feautures div.container div.box h3{
+  margin:30px 0;
+}
+div.feautures div.container div.box p{
+  line-height: 1.8;
+  font-size: 17px;
+  color:var(--main-p-color);
+  margin:17px 0;
+
 }
