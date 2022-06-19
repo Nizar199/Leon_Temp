@@ -40,8 +40,35 @@ body {
     width: 1170px;
   }
 }
+div.Up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  right: 50px;
+}
+div.Up span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 3px 0;
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+div.Up a {
+  color: var(--main-color);
+  font-size: 33px;
+  transition: 0.3s;
+  position: relative;
+}
+div.Up a:hover {
+  transform: scale(1.3);
+  color: aquamarine;
+}
 div.special-header {
   text-align: center;
+  margin-bottom: var(--main-margin);
 }
 div.special-header h1 {
   margin: 0px;
@@ -61,7 +88,6 @@ nav {
 nav .container {
   display: flex;
   justify-content: space-between;
-  text-align: center;
 }
 nav .container .logo {
   width: 60px;
@@ -81,6 +107,12 @@ div.nav-link .nav-logo {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
+}
+div.nav-link .links li a {
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  color: var(--main-p-color);
 }
 div.nav-link:hover .nav-logo {
   transform: rotate(-90deg);
@@ -125,9 +157,8 @@ div.container div.nav-link ul.links::after {
 }
 div.container div.nav-link ul.links > li {
   list-style-type: none;
-  padding: 15px;
   font-size: 16px;
-  transition: 1s;
+  transition: 0.3s;
 }
 div.container div.nav-link ul.links > li a {
   text-decoration: none;
@@ -198,7 +229,6 @@ div.services-section {
 div.services-section div.services-content {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--main-margin);
 }
 div.services-section div.services-content div.cards {
   display: grid;
@@ -275,4 +305,148 @@ div.services-content div.image-cont img {
     .card-text-content {
     padding: 10px 5px 5px 5px;
   }
+}
+/*Portfolio*/
+div.portfolio-section {
+  background-color: var(--main2-background);
+  padding: var(--main-padding) 0;
+}
+div.portfolio-section div.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+div.portfolio-section div.portfolio-content div.card img {
+  max-width: 100%;
+}
+div.portfolio-section div.portfolio-content div.card div.card-text-content {
+  padding: 30px;
+}
+div.portfolio-section div.portfolio-content div.card div.card-text-content h3 {
+  margin-top: 0;
+}
+div.portfolio-section div.portfolio-content div.card div.card-text-content p {
+  font-weight: 300;
+  color: var(--main-p-color);
+}
+/*Portfolio Style Ends*/
+/*About */
+div.about-section {
+  background-color: var(--main-background);
+  padding: var(--main-padding) 0;
+}
+div.about-section div.about-content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 992px) {
+  div.about-section div.about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  div.about-section div.about-content div.image::before,
+  div.about-section div.about-content div.image::after {
+    display: none;
+  }
+  div.about-section div.about-content div.about-text-content {
+    text-align: center;
+    min-width: 100%;
+  }
+  div.about-text-content span {
+    margin: auto;
+  }
+}
+div.about-section div.about-content div.image {
+  position: relative;
+}
+div.about-section div.about-content div.image::before {
+  content: "";
+  position: absolute;
+  height: calc(100% + 20%);
+  width: 100px;
+  background-color: var(--special-header);
+  z-index: 1;
+  top: -10%;
+  left: -10%;
+}
+div.about-section div.about-content div.image::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 200px;
+  background-color: var(--main-color);
+  z-index: 1;
+  bottom: 40px;
+  right: -58%;
+}
+div.about-section div.about-content div.image img {
+  width: 250px;
+  position: relative;
+  z-index: 2;
+}
+div.about-section div.about-content div.about-text-content {
+  width: 55%;
+  position: relative;
+}
+div.about-section div.about-content div.about-text-content::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 85%;
+  background-color: var(--main-background);
+  left: -235px;
+  top: -60px;
+  z-index: 1;
+}
+
+div.about-section div.about-content div.about-text-content p:first-child {
+  margin-bottom: 50px;
+  font-weight: bold;
+  line-height: 2;
+}
+div.about-section div.about-content div.about-text-content span {
+  display: block;
+  width: 40%;
+  height: 2px;
+  background-color: var(--main-color);
+}
+div.about-section div.about-content div.about-text-content p:last-child {
+  margin-bottom: 50px;
+  line-height: 2;
+}
+/*About Style Ends*/
+/*Contact*/
+div.contact-section {
+  background-color: var(--main2-background);
+  padding: var(--main-padding) 0;
+  text-align: center;
+  color: var(--secondary-color);
+}
+div.contact-section div.contact-text-content h2 {
+  font-weight: 800;
+  font-size: 35px;
+  letter-spacing: -2px;
+  margin-bottom: 0px;
+}
+div.contact-section div.contact-text-content h3 {
+  color: var(--main-color);
+  font-weight: 800;
+  font-size: clamp(30px, 50%, 35px);
+  margin-top: 20px;
+}
+div.contact-section div.contact-text-content i:hover {
+  color: var(--main-color);
+}
+/*footer*/
+footer {
+  height: 80px;
+  background-color: var(--secondary-color);
+  padding: 30px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+footer span {
+  color: var(--main-color);
+  font-weight: bold;
 }
